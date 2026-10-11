@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Job Platform</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="navbar">
+    <div class="brand">💼 Job Platform</div>
+    <div class="mode-toggle">
+      <button id="candidateBtn" class="active">Candidate</button>
+      <button id="employerBtn">Employer</button>
+    </div>
+  </header>
+
+  <main>
+    <!-- EMPLOYER: Post a job -->
+    <section id="employerPanel" class="hidden">
+      <h2>Post a New Job</h2>
+      <form id="jobForm" class="card">
+        <label>Job Title
+          <input type="text" id="title" required placeholder="e.g. Frontend Developer" />
+        </label>
+        <label>Company
+          <input type="text" id="company" required placeholder="e.g. Acme Corp" />
+        </label>
+        <div class="row">
+          <label>Location
+            <input type="text" id="location" placeholder="e.g. Remote / Bengaluru" />
+          </label>
+          <label>Type
+            <select id="type">
+              <option>Full-time</option>
+              <option>Part-time</option>
+              <option>Internship</option>
+              <option>Contract</option>
+            </select>
+          </label>
+          <label>Salary
+            <input type="text" id="salary" placeholder="e.g. ₹6 LPA" />
+          </label>
+        </div>
+        <label>Description
+          <textarea id="description" rows="4" placeholder="Role responsibilities, requirements..."></textarea>
+        </label>
+        <button type="submit" class="primary">Publish Job</button>
+      </form>
+
+      <h2>My Posted Jobs</h2>
+      <div id="myJobs" class="list"></div>
+    </section>
+
+    <!-- CANDIDATE: Browse jobs -->
+    <section id="candidatePanel">
+      <h2>Find Your Next Role</h2>
+      <div class="filters card">
+        <input type="text" id="search" placeholder="Search by title, company, skill..." />
+        <select id="filterType">
+          <option value="">All Types</option>
+          <option>Full-time</option>
+          <option>Part-time</option>
+          <option>Internship</option>
+          <option>Contract</option>
+        </select>
+      </div>
+      <div id="jobList" class="list"></div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    Built with vanilla JavaScript · Data saved locally in your browser
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
